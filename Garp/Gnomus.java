@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class Gnomus here.
  * 
@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Gnomus extends Actor
 {
+    
+    int charsDied = 0;
+    
     /**
      * Act - do whatever the Gnomus wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,11 +18,11 @@ public class Gnomus extends Actor
     public void act() 
     {
        int random;
-       
+   
        move(5);
        if(atWorldEdge()){
            move(-5);
-           if(Greenfoot.getRandomNumber(100)<50){
+           if(Greenfoot.getRandomNumber(100) > 50){
               setRotation(getRotation() + Greenfoot.getRandomNumber(180));
             } 
             else {
@@ -35,8 +38,8 @@ public class Gnomus extends Actor
               setRotation(getRotation() - Greenfoot.getRandomNumber(180));
            }
        } 
+       lookforGarp();
        lookforActor();
-       lookforGrarp();
     } 
     
     public boolean atWorldEdge() 
@@ -71,21 +74,37 @@ public class Gnomus extends Actor
         Actor actor;
         actor = getOneObjectAtOffset(1, 1,Actor.class);
         if(actor != null){
-            turn(90);
+            turn(45);
         }
     }
-    protected void lookforGrarp()
+     
+    protected void lookforGarp()
     {
         Actor garp;
+        Actor garp2;
         
-        int num = 0;
+        garp2 = getOneObjectAtOffset(1,1,Garp2.class);
         garp = getOneObjectAtOffset(1,1,Garp.class);
-       
-        if(garp != null){
+        if(garp != null ){
             Greenfoot.playSound("scream.mp3");
             getWorld().removeObject(garp);
-            Greenfoot.stop();
+            charsDied++;
+        } 
+        if (garp2 != null) {
+            Greenfoot.playSound("scream.mp3");
+            getWorld().removeObject(garp2);
+            charsDied++;
         }
-                
+          
+           
     }
-}   
+      public int endSpelen()
+    {   
+        return this.charsDied;
+    }
+}
+       
+
+    
+
+    

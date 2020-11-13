@@ -19,8 +19,8 @@ public class Garp extends Actor
     {
        movingAndTurning(); 
        collectingDiamond();
-       foundRoch();
-       fundBomb();
+       foundRock();
+       fundBomb1();
     }
     
     protected void movingAndTurning(){
@@ -30,7 +30,7 @@ public class Garp extends Actor
         }
         setRotation(0);
         move(5);
-        if(foundRoch())
+        if(foundRock())
         {
             move(-5);
         } 
@@ -41,7 +41,7 @@ public class Garp extends Actor
         }
         setRotation(180);
         move(5);
-        if(foundRoch())
+        if(foundRock())
         {
             move(-5);
         } 
@@ -52,7 +52,7 @@ public class Garp extends Actor
         }
         setRotation(-90);
         move(5);
-        if(foundRoch())
+        if(foundRock())
         {
             move(-5);
         } 
@@ -63,7 +63,7 @@ public class Garp extends Actor
         } 
         setRotation(90); 
         move(5); 
-        if(foundRoch())
+        if(foundRock    ())
         {
             move(-5);
         } 
@@ -92,7 +92,7 @@ public class Garp extends Actor
         }
     }
     
-    protected boolean foundRoch(){
+    protected boolean foundRock(){
        Actor rock;
        rock = getOneObjectAtOffset(0,0,Rock.class);
        if(rock != null)
@@ -102,7 +102,7 @@ public class Garp extends Actor
        return false;
     }
     
-    protected void fundBomb()
+    protected boolean fundBomb1()
     {
         Actor bomb;
         bomb = getOneObjectAtOffset(0, 0,Bomb.class);
@@ -111,7 +111,13 @@ public class Garp extends Actor
             getWorld().removeObject(bomb);
             getWorld().addObject(new Explosion(),getX(),getY());
             getWorld().removeObject(this);
+            //().serObject(charsDied++);
         }
+        return true;
     }
+    //public int getCharsDied()
+    //{   
+    // return this.charsDiedBomb;
+    //}
 } 
 

@@ -4,6 +4,8 @@ import greenfoot.Actor;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Dimension;
+import java.awt.geom.AffineTransform;
+import java.awt.font.FontRenderContext;
 /**
  * Write a description of class EndScore here.
  * 
@@ -42,17 +44,18 @@ public class EndScore extends Score
         Dimension dim;
         
         if(score == 10)
-        
-            resultaat = "Je hebt gewonnen";
-        else
-        
+        {
+           resultaat = "Je hebt gewonnen";
+        }
+        else{
             resultaat = "Je hebt verloren";
+        }
         
         tekst = getElapsedTime();
         tekst += "\n\r" + "aantal diamanten:" + score + "\n\r"+resultaat;
         image = new GreenfootImage(10,10);
         
-                     
+        
         dim = getTextDimensions(image,tekst);
         dim.height *= 4;
         dim.width /= 2;

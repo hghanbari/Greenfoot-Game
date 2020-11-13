@@ -11,6 +11,8 @@ public class Explosion extends Actor
     private GreenfootImage[]images;
     private int action, increment;
     private boolean geluid;
+    int charsDiedBomb =0;
+    int c;
     /**
      * Act - do whatever the Explosion wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -39,8 +41,10 @@ public class Explosion extends Actor
     }
     public void act() 
     {
+        
         setImage(images[action]);
         action += increment;
+        
         if(geluid)
         {
             Greenfoot.playSound("explosion.wav");
@@ -48,9 +52,16 @@ public class Explosion extends Actor
         }
         
         if(action > 7)
-        {   
-            getWorld().removeObject(this);
-            Greenfoot.stop();
+        {   increment = -1;
+             action += increment;
         }
+        if(action < 0)
+        {
+           getWorld().removeObject(this);
+             
+        }
+        
     }    
+    
+    
 }

@@ -16,8 +16,8 @@ public class Counter extends Score
         GreenfootImage image;
         Dimension dim;
         
-        score = 0;
-        scoreText ="Aantal diamanten: 0";
+        
+        scoreText ="Aantal diamanten:" + score;
         image = new GreenfootImage(10,100);
         dim = getTextDimensions(image,scoreText);
         image.scale(dim.width, dim.height);
@@ -38,6 +38,7 @@ public class Counter extends Score
     {
         score++;
         updateImage();
+        
     }
    
     protected void updateImage()
@@ -53,8 +54,9 @@ public class Counter extends Score
         image.setColor(new Color (0,0,0));
         image.drawString(scoreText, 0, dim.height);
     }
+    
     public int getScore()
-    {
+    {   
         return this.score;
     }
 }

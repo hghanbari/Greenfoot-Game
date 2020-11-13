@@ -4,6 +4,8 @@ import greenfoot.Actor;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Dimension;
+import java.awt.geom.AffineTransform;
+import java.awt.font.FontRenderContext;
 /**
  * Write a description of class GarpWorld here.
  * 
@@ -15,7 +17,7 @@ public class GarpWorld extends World
     private GreenfootSound sound;  
     private Counter counter;
     private EndScore endScore;
-    int score;
+
     /**
      * Constructor for objects of class GarpWorld.
      * 
@@ -26,6 +28,7 @@ public class GarpWorld extends World
        super(800, 600, 1); 
        populateTheWorld();
        sound = new GreenfootSound("musicmix.mp3");
+       
     }
     
     protected void populateTheWorld(){   
@@ -34,7 +37,7 @@ public class GarpWorld extends World
         
         
         addObject( new Garp(),getWidth()/2,getHeight()/3);
-        
+        addObject( new Garp2(),getWidth()/2,getHeight()/2);
         addObject( new Gnomus(),Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
         for(teller = 0;teller <10;teller++ ){
         addObject( new Diamond(),Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
@@ -49,13 +52,18 @@ public class GarpWorld extends World
         regel = getHeight() - counter.getImage().getHeight() / 2 -1;
         kolom = counter.getImage().getWidth() / 2+1;
         addObject(new Counter(),kolom,regel);
-        setPaintOrder(Counter.class,Garp.class,Gnomus.class,Diamond.class,Rock.class,Bomb.class);
+        setPaintOrder(Counter.class,Garp.class,Garp2.class,Gnomus.class,Diamond.class,Rock.class,Bomb.class);
     }
+    
     public void started(){
-      sound.playLoop();
-      endScore = new EndScore();
+       endScore = new EndScore();
+       sound.playLoop();
+      
     }
-    public void stopped(){
+        
+    
+    public void stopped( ){
+      int score;
       
       score = counter.getScore();
       endScore.setEndImage(score);

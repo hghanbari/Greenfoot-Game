@@ -1,15 +1,8 @@
-Class documentation
+Project documentation
 <---- javadoc command: ---->
 C:\Program Files\Greenfoot\jdk\bin\javadoc.exe
--author
--version
--nodeprecated
--protected
--Xdoclint:none
--noindex
--notree
--nohelp
--nonavbar
+-sourcepath
+C:\Users\ghham\ROC\Greenfoot Game\Garp
 -source
 11
 -classpath
@@ -20,25 +13,41 @@ C:\Users\ghham\ROC\Greenfoot Game\Garp\doc
 UTF-8
 -charset
 UTF-8
-C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java
+-doctitle
+Garp
+-windowtitle
+Garp
+-author
+-version
+-nodeprecated
+-protected
+-Xdoclint:none
+-link
+https://docs.oracle.com/en/java/javase/11/docs/api/
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Score.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Counter.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Explosion.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Rock.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/EndScore.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Garp.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Gnomus.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Diamond.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/GarpWorld.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Garp2.java
+C:\Users\ghham\ROC\Greenfoot Game\Garp/Bomb.java
 <---- end of javadoc command ---->
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Score.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Counter.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Explosion.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Rock.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\EndScore.java...
 Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java...
-C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java:16: error: illegal character: '\u201c'
-      imageLeft = new GreenfootImage(“GarpLeft.png”);
-                                     ^
-C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java:16: error: illegal character: '\u201d'
-      imageLeft = new GreenfootImage(“GarpLeft.png”);
-                                                  ^
-C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java:16: error: not a statement
-      imageLeft = new GreenfootImage(“GarpLeft.png”);
-                                              ^
-C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java:17: error: illegal character: '\u201c'
-      imageRight =  new GreenfootImage(“GarpRight.png”);
-                                       ^
-C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java:17: error: illegal character: '\u201d'
-      imageRight =  new GreenfootImage(“GarpRight.png”);
-                                                     ^
-C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java:17: error: not a statement
-      imageRight =  new GreenfootImage(“GarpRight.png”);
-                                                 ^
-6 errors
+C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp.java:114: error: -> expected
+            ().serObject(charsDied++);
+              ^
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Gnomus.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Diamond.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\GarpWorld.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Garp2.java...
+Loading source file C:\Users\ghham\ROC\Greenfoot Game\Garp\Bomb.java...
+1 error

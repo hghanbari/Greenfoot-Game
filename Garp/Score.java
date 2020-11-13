@@ -24,9 +24,11 @@ public abstract class Score extends Actor{
    * @return Dimension met daarin de breedte en de hoogte van de string
    */
   
+  
    public Dimension getTextDimensions(GreenfootImage image, String tekst){
        int height, width;
-            
+             
+       
        FontMetrics metrics = image.getAwtImage().getGraphics().getFontMetrics();
        width = metrics.stringWidth(tekst) * 2;
        height = metrics.getLeading() + metrics.getAscent() + metrics.getDescent() * 3;
